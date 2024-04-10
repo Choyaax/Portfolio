@@ -11,8 +11,8 @@
         <nav class="navigation">
           <ul>
           <!---  <router-link> to = "/documentation">Documentation</router-link> --> <!-- To be continued on the final version AKA on the finals-->
-            <li><a href="https://www.facebook.com/GrimReaper44444444444444444444/">Message me on Facebook messenger</a></li>
-           <li><a href="https://forms.gle/kT7jcuW8KxJg4rgy6">Appoint now</a></li>   <!--Google forms lang sa sir but will put a forms inside the portfolio jud-->
+            <li><a href="https://www.facebook.com/GrimReaper44444444444444444444/">Contact me</a></li>
+           <li><a href="https://forms.gle/kT7jcuW8KxJg4rgy6">Send a request</a></li>   <!--Google forms lang sa sir but will put a forms inside the portfolio jud-->
           </ul>
         </nav>
       </div>
