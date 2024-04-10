@@ -11,56 +11,107 @@
         <nav class="navigation">
           <ul>
           <!---  <router-link> to = "/documentation">Documentation</router-link> --> <!-- To be continued on the final version AKA on the finals-->
-            <li><a href="https://www.facebook.com/GrimReaper44444444444444444444/">Contact me</a></li>
-           <li><a href="https://forms.gle/kT7jcuW8KxJg4rgy6">Send a request</a></li>   <!--Google forms lang sa sir but will put a forms inside the portfolio jud-->
+            <li><a href="https://www.facebook.com/GrimReaper44444444444444444444/">Message me on Facebook messenger</a></li>
+           <li><a href="https://forms.gle/kT7jcuW8KxJg4rgy6">Appoint now</a></li>   <!--Google forms lang sa sir but will put a forms inside the portfolio jud-->
           </ul>
         </nav>
       </div>
+      
       <div class="content">
-        <h2>Services that I offer</h2>
-        <div class="services">
-          <div class="service">
-            <img src="../assets/computer.png" alt="Computer Service">
+      <h2>Services that I offer</h2>
+      <div class="services">
+     <div class = "service">
+      <img src="../assets/computer.png" alt="Computer Service">
             <h3>Computer Desktop Services</h3>
-          </div>
-          <div class="service">
+         
+
+        </div> 
+          
+        <div class="service">
             <img src="../assets/laptop.png" alt="Laptop Service">
             <h3>Laptop Services</h3>
           </div>
+         
         </div>
-        <div class="expertise">
-          <h2>Expertise</h2>
-          <p>I specialize in troubleshooting hardware and software issues, system optimization, data recovery, and providing comprehensive support for various computer and laptop models.</p>
+      </div>
+    </div>
+
+           <div class="expertise">
+        <h2>Expertise</h2>
+        <button class="button" @click="toggleExpertise">{{ showExpertise ? 'Back' : 'Show details' }}</button>
+
+          <div v-show="showExpertise" class="info-container">
+          <div class = "info-card">
+          <p>Basic computer and laptop troubleshooting not to mention upgrading it's hardware.</p>
+          </div>
+        </div> 
+      
         </div>
         <div class="about-me">
-          <h2>About Me</h2>
-          <p>I know about a thing or two about computers</p>
-          <button class="button" @click="toggleImage">Service fees</button>
+        <h2>About Me</h2>
+        <button class="button" @click="toggleAboutMe">{{ showAboutMe ? 'Back' : 'Show Details' }}</button>
+       
+          <div v-show="showAboutMe" class="info-container">
+          <div class = "info-card">
+          <p><strong>Name:</strong> Craig P. Cabugason</p>
+          <p><strong>Skills:</strong> Gaming, Computer Technician</p>
+          <p><strong>Experience:</strong> 8 years in computer troubleshooting and repair </p>
+          <p><strong>Interests:</strong> Gaming, Technology, Problem-solving</p> 
+          </div>
+        </div>      
         </div>
-        <transition name="fade">
+       
+        <br>
+        <button class="button" @click="toggleImage">Service fees</button> 
+        <br>
+        <transition name="fade"> 
           <div class="container-two" v-if="showImage">
             <div class="services">
               <img src="../assets/service.jpg" alt="Service Image">
             </div>
           </div>
         </transition>
-      </div>
-    </div>
+      
   </template>
   
   <script>
   export default {
     data() {
       return {
-        showImage: false
+        showImage: false,
+        showAboutMe: false , 
+        showExpertise: false,
+        showDesktopImage: false, 
+        showLaptopImage: false
+        
+    
       };
     },
+
     methods: {
       toggleImage() {
         this.showImage = !this.showImage; 
+      }, 
+
+      toggleAboutMe(){
+        this.showAboutMe = !this.showAboutMe;
+      }, 
+
+      toggleExpertise(){
+        this.showExpertise = !this.showExpertise;
       }
+    },  
+
+    toggleSampleImage(service) {
+ if(service === 'desktop'){
+  this.showDesktopImage = !this.showDesktopImage;
+ }
+ else if(service ==='laptop'){
+  this.showLaptopImage = !this.showLaptopImage;
+ }
     }
-  }
+  };
+
   </script>
   
   <style scoped>
@@ -84,15 +135,34 @@
     padding: 20px;
   }
   
+  .info-container {
+    background-color: #D78928; 
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+  } 
+
+  .info-card{
+
+  } 
+
+  .container-two{
+    background-color: #D78928; 
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
   .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
+    
   }
   
   .profile {
     display: flex;
-    align-items: center;
+    align-items: center; 
+    
   }
   
   .profile img {
