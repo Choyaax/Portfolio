@@ -146,12 +146,7 @@
 
   } 
 
-  .container-two{
-    background-color: #D78928; 
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 10px;
-  }
+
   .header {
     display: flex;
     justify-content: space-between;
